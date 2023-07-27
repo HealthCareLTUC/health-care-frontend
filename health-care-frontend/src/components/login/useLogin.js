@@ -8,10 +8,12 @@ import LoginPatient from './LoginPatient/LoginPatient';
 import SignupDoctor from './SignupDoctor/SignupDoctor';
 import SignupPatient from './SignupPatient/SignupPatient';
 // import Slider from '../slider/slider';
-// import { Image } from 'react-bootstrap';
-// import pataint from '../assests/pataint.png'
-// import doctor from '../assests/doctor.png'
+import LoginFooter from './LoginPatient/loginFooter/loginFooter';
+import { Image } from 'react-bootstrap';
+import pataint from '../assests/pataint.png'
+import doctor from '../assests/doctor.png'
 // import PatientPage from '../../PatientPage';
+// import PatientPage from '../patient/patientPage';
 
 
 
@@ -66,13 +68,13 @@ const getDoctorData=(value)=>{
             <Stack  direction="horizontal" gap={2} className="docLog">
             <div className='DL'>
                 <Button c as="a" className='x' variant="primary" onClick={() => setShow(!show)}>
-                {/* <Image className='img' src={doctor} alt="Icon" /> */}
+                <Image className='img' src={doctor} alt="Icon" />
                     Doctor's Login
                 </Button>
                 </div>
                 <div className='PL'>
                 <Button as="a" className='x' variant="success" onClick={() => setShow1(!show1)}>
-                {/* <Image className='img' src={pataint} alt="Icon" /> */}
+                <Image className='img' src={pataint} alt="Icon" />
                     Patient's Login
                 </Button>
                 </div>
@@ -80,19 +82,21 @@ const getDoctorData=(value)=>{
             <Stack direction="horizontal" gap={2} className="signDoc">
                 <div className='DS'>
                 <Button as="a" className='x' variant="primary" onClick={() => setShow2(!show2)}>
-                {/* <Image className='img' src={doctor} alt="Icon" /> */}
+                <Image className='img' src={doctor} alt="Icon" />
                     Doctor's Signup
                   
                 </Button>
                 </div>
                 <div className='PS'>
                 <Button as="a" className='x' variant="success" onClick={() => setShow3(!show3)}>
-                {/* <Image className='img' src={pataint} alt="Icon" /> */}
+                <Image className='img' src={pataint} alt="Icon" />
                     Patient's Signup
                 </Button>
                 </div>
             </Stack>
         </div>
+
+        <LoginFooter/>
         </div>
 )}}
 

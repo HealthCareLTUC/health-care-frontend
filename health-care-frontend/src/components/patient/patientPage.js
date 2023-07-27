@@ -8,6 +8,9 @@ import image3 from   '../assests/image3.jpg'
 import Form from 'react-bootstrap/Form';
 import './patient.css';
 
+import Header from '../Header/Header';
+import Footer from '../Footer/footer';
+
 
 
 
@@ -133,10 +136,11 @@ console.log(props.patientData);
   
 
   return (
-
-
+    
+    <>
+  <Header/>
     <div className="container">
- 
+    
     
       {/* {patient.map((patient, i) => {
         return (
@@ -219,7 +223,9 @@ console.log(props.patientData);
         <DoctorList doctor={SearchName} />
         <DoctorList doctor={specialty} CommentHandler={CommentHandler} />
       </div>
+   
     </div>
+    </>
   );
 };
 

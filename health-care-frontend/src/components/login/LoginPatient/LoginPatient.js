@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 // import PatientPage from '../../PatientPage'
 
 
+
 import { Route, Routes } from 'react-router';
 
 function LoginPatient({ handleShow, handleClose, show ,callback}) {
@@ -18,7 +19,7 @@ function LoginPatient({ handleShow, handleClose, show ,callback}) {
     const response = (await fetch(`${url}/patientName/${username}`));
     const data=await response.json()
     if((data[0]["name"]==username)&&(data[0]["password"]==password)){
-      // setPath("/patientPage")
+      setPath("/patientPage")
       window.location.href = "/patientPage";
       console.log(`logged in successfully`);
       return data
@@ -58,11 +59,11 @@ function LoginPatient({ handleShow, handleClose, show ,callback}) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          {/* <Link to={path}> */}
+          <Link to={path}>
           <Button variant="primary" onClick={async()=>{await callback(await getPatientData("https://healthcare-back.onrender.com", username, password))}}>
             Login
           </Button>
-          {/* </Link> */}
+          </Link>
         </Modal.Footer>
       </Modal>
     </>
