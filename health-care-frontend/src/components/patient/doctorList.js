@@ -2,7 +2,7 @@ import React from 'react';
 import CardDoctors from './CardDoctors';
 
 function DoctorList(props) {
-    
+    const restartArr=[];
   const doctorsArray = Array.isArray(props.doctor) ? props.doctor : [];
 
   return (
@@ -15,8 +15,12 @@ function DoctorList(props) {
           <CardDoctors key={i} doctorname={obj} />
         )
       ))}
+      
+
     </div>
   );
+  doctorsArray=restartArr;
+  console.log();
 }
 
 export default DoctorList;
