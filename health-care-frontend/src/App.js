@@ -10,7 +10,12 @@ import Reserve from './components/Reserve/Reserve';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/footer';
 
+
+
+import useLogin from './components/login/useLogin';
+
 function App() {
+  // const {render,patientData,DoctorData}=useLogin()
   return (
     <div className="App">
 
@@ -18,7 +23,11 @@ function App() {
 
   <Header/>
 
+
       {/* <PatientProfile/> */}
+
+    {/* {render} */}
+
   <Footer/>
 
 {/* <Routes>
