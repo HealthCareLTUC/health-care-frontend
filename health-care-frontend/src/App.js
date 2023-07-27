@@ -9,6 +9,7 @@ import Pharmacy from './components/Pharmacy/Pharmacy';
 import Reserve from './components/Reserve/Reserve';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/footer';
+
 function App() {
   return (
     <div className="App">
@@ -16,8 +17,8 @@ function App() {
 
 
   <Header/>
-      <PatientPage/>
-      {/*<PatientProfile/>*/}
+
+      {/* <PatientProfile/> */}
   <Footer/>
 
 {/* <Routes>
