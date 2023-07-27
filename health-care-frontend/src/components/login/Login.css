@@ -1,0 +1,123 @@
+.img1{
+    width: 300px;
+    height: 200px;
+}
+
+
+h1 {
+    margin-right: 100px;
+    padding-top: 90px;
+    font-style: oblique;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: 'Oregano', cursive;
+    word-spacing: 20px;
+     word-wrap: break-word;
+    white-space: pre-line;
+    text-align: center;
+   
+}
+
+
+.mx-2{
+    display: inline-flex;
+    /* flex-direction: column; */
+    width: 1000px;
+    /* padding-right: 100px; */
+    column-gap: 10px;
+
+
+}
+
+ /* Button{
+    width: 1000px;
+ } */
+
+
+
+ .bot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 400px;
+    height: 400px;
+    padding-left: 500px;
+
+  }
+  .x{
+    width: 150px;
+    height: 100px;
+    display: flex;
+ 
+
+  }
+ 
+  .bot button {
+    padding: 25px 50px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    row-gap: 50px;
+
+ 
+  }
+
+
+
+  .PS{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  /*
+  .docLog{
+    row-gap: 200px;
+  }
+
+
+  .bot .docLog .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+
+  .bot .docLog .btn-success {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+
+  .bot .signDoc .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+ 
+  .bot .signDoc .btn-success {
+    background-color: #28a745;
+    color: #fff;
+    position: relative;
+  }
+   .bot .signDoc .btn-success .img {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+  }
+  
+
+  .bot .docLog,
+  .bot .signDoc {
+    display: flex;
+    gap: 100px;
+  }
+
+  .DL{
+
+    width: 100px;
+  }
+   */
