@@ -11,8 +11,8 @@ function App() {
     <div className="App">
 
 
-      {/* <PatientPage/> */}
-      <PatientProfile/>
+      <PatientPage/>
+      {/* <PatientProfile/> */}
     
 {/* <Routes>
 
