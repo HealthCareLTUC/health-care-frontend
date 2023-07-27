@@ -5,15 +5,16 @@ import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import PatientPage from './components/patient/patientPage';
 import PatientProfile from './components/patient/patientProfile';
-
+import Pharmacy from './components/Pharmacy/Pharmacy'; 
+import Reserve from './components/Reserve/Reserve';
 function App() {
   return (
     <div className="App">
 
 
       {/* <PatientPage/> */}
-      <PatientProfile/>
-    
+      {/*<PatientProfile/>*/}
+   <Reserve/>
 {/* <Routes>
 
 <Route path='/' element={<PatientPage/>}/>
