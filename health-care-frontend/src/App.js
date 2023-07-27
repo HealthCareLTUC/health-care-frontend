@@ -7,6 +7,8 @@ import PatientPage from './components/patient/patientPage';
 import PatientProfile from './components/patient/patientProfile';
 import Pharmacy from './components/Pharmacy/Pharmacy'; 
 import Reserve from './components/Reserve/Reserve';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/footer';
 function App() {
   return (
     <div className="App">
@@ -14,7 +16,8 @@ function App() {
 
       {/* <PatientPage/> */}
       {/*<PatientProfile/>*/}
-   <Reserve/>
+  <Header/>
+  <Footer/>
 {/* <Routes>
 
 <Route path='/' element={<PatientPage/>}/>
