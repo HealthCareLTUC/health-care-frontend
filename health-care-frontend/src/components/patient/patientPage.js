@@ -8,6 +8,10 @@ import image3 from   '../assests/image3.jpg'
 import Form from 'react-bootstrap/Form';
 import './patient.css';
 
+import Header from '../Header/Header';
+import Footer from '../Footer/footer';
+
+
 
 
 
@@ -22,6 +26,8 @@ function PatientPage(props) {
   const specialtyInputRef = useRef(null);
   const [appointments, setAppointments] = useState([]);
   // const [patient, setpatient] = useState([]);
+const [inputValue, setInputValue] = useState('')
+
 
 
 console.log(props.patientData);
@@ -59,6 +65,7 @@ console.log(props.patientData);
         console.log(dataByName);
         setSearchName(dataByName);
       }
+      handleClear()
     } catch (error) {
       console.error('Error fetching data:', error);
      
@@ -77,6 +84,8 @@ console.log(props.patientData);
         const dataBySpecialty = await response.json();
         console.log(dataBySpecialty);
         setSpecialty(dataBySpecialty);
+
+        handleClear()
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -112,16 +121,26 @@ console.log(props.patientData);
   }
 
 
+  const handleClear = () => {
+    setInputValue('');
+    nameInputRef.current.value = '';
+    if(SearchName){
+        SearchName=''}
+        else { specialty=''
 
+        }
+    }
+  
 
   
   
 
   return (
-
-
+    
+    <>
+  <Header/>
     <div className="container">
- 
+    
     
       {/* {patient.map((patient, i) => {
         return (
@@ -160,15 +179,19 @@ console.log(props.patientData);
 
       <div className="form-group">
         <label>Search Doctor by Name:</label>
-        <Form.Control  size="lg" ref={nameInputRef} type="text" className="form-control" placeholder="Enter doctor's name"  style={{width:'600px' ,margin:"30px",backgroundColor:"#E3F4F4"}} />
-        <button className="btn btn-primary mt-2" onClick={handleSearchByName}     style={{backgroundColor:'#1f43e0', width:'100px' ,height:'55px' }} >
+        <Form.Control  size="lg" ref={nameInputRef} type="text" className="form-control"
+         placeholder="Enter doctor's name"  style={{width:'600px' ,margin:"30px",backgroundColor:"#E3F4F4"}} />
+        <button className="btn btn-primary mt-2" onClick={handleSearchByName}     
+        style={{backgroundColor:'#1f43e0', width:'100px' ,height:'55px' }} >
           Search
         </button>
       </div>
       <div className="form-group mt-4">
         <label>Search Doctor by Specialty:</label>
-        <Form.Control size="lg" ref={specialtyInputRef} type="text" className="form-control" placeholder="Enter doctor's specialty" style={{width:'600px' ,margin:"20px",backgroundColor:"#E3F4F4"}}/>
-        <button className="btn btn-primary mt-2" onClick={handleSearchBySpecialty} style={{backgroundColor:'#1f43e0', width:'100px' ,height:'55px' }}>
+        <Form.Control size="lg" ref={specialtyInputRef} type="text" className="form-control"
+         placeholder="Enter doctor's specialty" style={{width:'600px' ,margin:"20px",backgroundColor:"#E3F4F4"}}/>
+        <button className="btn btn-primary mt-2" onClick={handleSearchBySpecialty} 
+        style={{backgroundColor:'#1f43e0', width:'100px' ,height:'55px' }}>
           Search
         </button>
       </div>
@@ -200,7 +223,9 @@ console.log(props.patientData);
         <DoctorList doctor={SearchName} />
         <DoctorList doctor={specialty} CommentHandler={CommentHandler} />
       </div>
+   
     </div>
+    </>
   );
 };
 
