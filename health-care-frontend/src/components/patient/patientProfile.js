@@ -37,8 +37,7 @@ console.log(appointments);
         }
         fetchAppointments();
       }
-
-
+   
 
       useEffect(() => {
         fetchAppointments();

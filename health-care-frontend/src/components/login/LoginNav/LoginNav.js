@@ -3,13 +3,14 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import logo from '../assests/iconDoctors.png'
+import logo from '../../assests/iconDoctors.png'
 
 
 function LoginNav() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        {/* <img className='img' src={logo} alt='healthcare'/> */}
+        <img className='img' src={logo} alt='healthcare'/>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
