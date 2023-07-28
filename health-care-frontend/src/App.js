@@ -19,7 +19,7 @@ function App() {
       {/* <PatientPage/> */}
       {/*<PatientProfile/>*/}
   <Header/>
-    {/* {render} */}
+    
   <Footer/>
 {/* <Routes>
 

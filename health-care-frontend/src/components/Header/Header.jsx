@@ -22,24 +22,13 @@ const styles = {
     color: '#fff',
     padding: '1rem',
     textAlign: 'left',
-    fontSize: '1px', 
-    height: '80px',
-    position: 'relative',
-  },
-  nav: {
     display: 'flex',
-    justifyContent: 'left',
-    alignItems: 'left',
-    height: '100px', 
-    width: '100%', 
+    alignItems: 'center',
+    minHeight: '50px', // Use minHeight instead of height to allow the header to grow with content
   },
   h1: {
     margin: 0,
     fontSize: '32px',
-    position: 'absolute',
-    top: '50%',
-    left: '50%', 
-    transform: 'translate(-50%, -50%)', 
   },
 };
 
