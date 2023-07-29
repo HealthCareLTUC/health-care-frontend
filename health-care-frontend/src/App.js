@@ -25,6 +25,8 @@ function App() {
   return (
     <div className="App">
 
+   
+
 <Routes>
 
   <Route path='/' element={render}/>
@@ -40,24 +42,7 @@ function App() {
 
 
 
-      {/* <PatientProfile/> */}
-      {/* <PatientPage/> */}
-
-      {/*<PatientProfile/>*/}
-
     
-
-
-    {/* {render} */}
-
-
-
-
-{/* <Routes>
-
-<Route path='/' element={<PatientPage/>}/>
-
-</Routes> */}
 
     </div>
   );

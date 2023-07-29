@@ -58,7 +58,11 @@ console.log("new app for doctor",appointments);
 
     <div className='profilepatient'>
    <DoctorNavBAr/>
-      <h1>Docctor Profile</h1>
+
+<p>{appointments.doctor_name}</p>
+
+      {/* <h1>Docctor Profile</h1> */}
+      <div  className='small-table-wrapper'>
       <Table striped bordered hover>
         <thead>
           <tr >
@@ -83,6 +87,7 @@ console.log("new app for doctor",appointments);
           ))}
         </tbody>
       </Table>
+      </div>
       <Footer/>
     </div>
   );
