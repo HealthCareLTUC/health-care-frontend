@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import { Card , Table,Modal,Button, Form, FormControl} from 'react-bootstrap';
-//import PatientPage from '../../PatientPage';
+
 function Reserve(props) {
   const [doctor, setDoctor] = useState(null);
   const [appointments, setAppointments] = useState([]);
@@ -13,7 +13,7 @@ function Reserve(props) {
       const url = `https://healthcare-back.onrender.com/searchDocN`; 
       let res = await fetch(url);
       let data = await res.json();
-      //setDoctor(data);
+     
 
      if (data && data.length > 0) {
       setDoctor(data[0]);

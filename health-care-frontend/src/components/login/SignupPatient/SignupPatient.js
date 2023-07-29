@@ -92,7 +92,7 @@ function SignupPatient({ handleShow, handleClose, show }) {
             Close
           </Button>
           {/* <Link to="/patientPage"> */}
-          <Button variant="primary" onClick={async () => await postPatientData("https://healthcare-back.onrender.com", username, password, history, age, similar)}>
+          <Button variant="primary" style={{width:'100px'}} onClick={async () => await postPatientData("https://healthcare-back.onrender.com", username, password, history, age, similar)}>
             Signup
           </Button>
           {/* </Link> */}

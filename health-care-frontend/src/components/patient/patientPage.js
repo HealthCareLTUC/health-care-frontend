@@ -6,13 +6,11 @@ import image1 from '../assests/image1.PNG';
 import image2 from '../assests/image2.jpg';
 import image3 from '../assests/image3.jpg';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import './patient.css';
 import { useLocation } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/footer';
-import PatientProfile from './patientProfile';
-import NavBAr from '../NavBar/NavBar';
+
 
 
 
@@ -26,9 +24,8 @@ function PatientPage(props) {
   const nameInputRef = useRef(null);
   const specialtyInputRef = useRef(null);
   const [appointments, setAppointments] = useState([]);
-  const [doctorID, setdoctorID] = useState([]);
-  const [reservationDate, setReservationDate] = useState('');
-  const [reservationTime, setReservationTime] = useState('');
+  
+ 
   const location = useLocation();
   const patientData = location.state?.patientData;
   
@@ -93,26 +90,38 @@ function PatientPage(props) {
     }
   }
 
-  // function handleReservation(doctor) {
-  //   // Set the doctor's information for reservation
-  //   setReservationDate('');
-  //   setReservationTime('');
-  //   // Your logic to handle reservation
-  //   // You can show a modal with inputs for date and time and save the reservation in the database
-  // }
+  
   useEffect(() => {
     fetchAppointments();
   }, []);
 
-  // let moveData=patientData;
-  // console.log("movidata",moveData);
+
   
   return (
     <>
       <Header patientData={patientData}/>
       <div className="container">
-        {/* ... rest of the code ... */}
 
+
+      <div className="containerdesign">
+          <div className="left">
+            <p>FIND THE DOCTORS <br />
+              "you are in the safe hands" </p>
+          </div>
+          <div className="right">
+            <div className="image-wrapper">
+              <Image className='img1' src={image1} alt="Image 1" />
+            </div>
+            <div className="image-wrapper">
+              <Image className='img2' src={image2} alt="Image 2" />
+            </div>
+            <div className="image-wrapper">
+              <Image className='img3' src={image3} alt="Image 3" />
+            </div>
+          </div>
+        </div>
+
+      
         <div className="form-group">
           <label>Search Doctor by Name:</label>
           <Form.Control
@@ -149,8 +158,9 @@ function PatientPage(props) {
             Search
           </button>
         </div>
+      
         <div className='tableone'>
-          <Table className='table' responsive="sm">
+          <Table className='table' responsive="sm" >
             <thead>
               <tr>
                 <th className="thead">#</th>

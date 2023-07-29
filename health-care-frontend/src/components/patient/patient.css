@@ -316,3 +316,7 @@ font-size: 25px;
       .small-table-wrapper{
         margin-top: 150px;
       }
+
+      Form.Control{
+        margin-top: 1000px;
+      }
