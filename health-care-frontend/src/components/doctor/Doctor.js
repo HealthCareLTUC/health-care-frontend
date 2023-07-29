@@ -3,40 +3,25 @@ import { Table, Button } from 'react-bootstrap';
 import Header from '../Header/Header';
 import Footer from '../Footer/footer';
 // import NavBar from '../NavBar/NavBar';
+import DoctorNavBAr from '../DoctorNav/DoctorNav';
 import { useLocation } from 'react-router-dom';
 
 
 
-function PatientProfile() {
+function Doctorprofile() {
   const [appointments, setAppointments] = useState([]);
   const location = useLocation();
-  const patientData = location.state?.patientData;
+  const DoctorData = location.state?.DoctorData;
   
 
-console.log("from patient profile",patientData);
-console.log("from patient profile2",patientData);
-// console.log("from patient profile",patientData);
-
-let newapp=getdata();
-console.log("local data",newapp);
-
-function getdata() {
-  try {
-    let retriveData = localStorage.getItem('appointments');
-    let obArr = JSON.parse(retriveData);
-    console.log('Data retrieved from local storage:', obArr);
-    return obArr || [];
-  } catch (error) {
-    console.error('Error retrieving data from local storage:', error);
-    return [];
-  }
-}
+console.log("from patient profile",DoctorData);
+console.log("Doctor ID",DoctorData.id);
 
   async function fetchAppointments () {
-    let id=newapp[0].patient_id;
+    let id =DoctorData.id;
     console.log("pateint  ID to ",id);
     try {
-      const response = await fetch(`https://healthcare-back.onrender.com/getpatientAppointment/${id}`); 
+      const response = await fetch(`https://healthcare-back.onrender.com/getAppointment/${id}`); 
       const recivedData = await response.json();
       setAppointments(recivedData);
     } catch (error) {
@@ -44,7 +29,7 @@ function getdata() {
     }
   };
 
-
+console.log("new app for doctor",appointments);
     async function handleDeleteAppointment(id) {
         console.log("in function",id);
         const url = `https://healthcare-back.onrender.com/delAppointment/${id}`;
@@ -67,19 +52,17 @@ function getdata() {
       
       }, []);
 
-      console.log("appointments finaly",appointments);
-   
-  console.log("test to see ",newapp[0].appointment_id);
+      
 
   return (
 
     <div className='profilepatient'>
-      <Header/>
-      <h1>Patient Profile</h1>
+   <DoctorNavBAr/>
+      <h1>Docctor Profile</h1>
       <Table striped bordered hover>
         <thead>
           <tr >
-            <th>Doctor</th>
+            <th>Patient</th>
             <th>Date</th>
             <th>Time</th>
             <th>Report</th>
@@ -89,7 +72,7 @@ function getdata() {
         <tbody>
           {appointments.map((appointments) => (
             <tr key={appointments.appointment_id}>
-              <td>{appointments.doctor_name}</td>
+              <td>{appointments.patient_name}</td>
               <td>{appointments.reservation_date}</td>
               <td>{appointments.reservation_time}</td>
               <td>{appointments.report}</td>
@@ -105,4 +88,4 @@ function getdata() {
   );
 
             }
-export default PatientProfile;
+export default Doctorprofile;

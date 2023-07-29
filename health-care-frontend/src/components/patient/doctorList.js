@@ -1,30 +1,16 @@
 import React from 'react';
 import CardDoctors from './CardDoctors';
 
-function DoctorList(props) {
-    const restartArr=[];
-  const doctorsArray = Array.isArray(props.doctor) ? props.doctor : [];
+function DoctorList({ patientData, doctor }) {
+  const doctorsArray = Array.isArray(doctor) ? doctor : [];
 
   return (
     <div className="list">
       {doctorsArray.map((obj, i) => (
-      
-        props.doctor ?(
-          <CardDoctors key={i} doctor={obj} />
-        ) : (
-          <CardDoctors key={i} doctorname={obj} />
-        )
+        <CardDoctors key={i} doctor={obj} patientData={patientData} />
       ))}
-      
-
     </div>
   );
-  doctorsArray=restartArr;
-  console.log();
 }
 
 export default DoctorList;
-
-
-
-

@@ -26,7 +26,7 @@ const CardDoctors = (props) => {
           </Button>
         </Card.Body>
       </Card>
-      <ModalDoctor handleShow={handleShow} handleClose={handleClose} show={show} doctor={props.doctor} CommentHandler={props.CommentHandler} />
+      <ModalDoctor handleShow={handleShow} handleClose={handleClose} show={show} patientData={props.patientData} CommentHandler={props.CommentHandler} doctor={props.doctor} />
 
     </div>
   );

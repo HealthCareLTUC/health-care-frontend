@@ -2,28 +2,43 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-function LoginDoctor({ handleShow, handleClose, show, callback }) {
+import { Link, useNavigate } from 'react-router-dom';
+
+function LoginDoctor({ handleShow, handleClose, show }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [path, setPath] = useState("/")
+  const navigate = useNavigate();
+
   async function getDoctorData(url, username, password) {
     try {
-      const response = (await fetch(`${url}/DoctorName/${username}`));
-      const data = await response.json()
-      if ((data[0]["name"] == username) && (data[0]["password"] == password)) {
-        console.log(`logged in successfully`);
-        window.location.href = "/";
-        return data
-      } else {
-        console.log("failed to login");
-        window.location.href = "/";
+      const response = await fetch(`${url}/DoctorName/${username}`);
+      const data = await response.json();
 
+      if (data.length > 0 && data[0].doctor_name == username && data[0].password == password) {
+        console.log('Logged in successfully:', data[0]);
+        return data[0];
+      } else {
+        console.log('Failed to login');
+        throw new Error('Invalid username or password');
       }
     } catch (error) {
-      alert("Username is wrong " + error)
-      window.location.href = "/"; 
-      console.log("hello")
+      console.error('Error fetching patient data:', error);
+      throw new Error('Failed to fetch patient data');
+    }
+  }
 
+  async function handleLogin() {
+    try {
+      const DoctorData = await  getDoctorData('https://healthcare-back.onrender.com',username,password);
+
+      // Handle navigation after successful login
+      console.log('Navigating to patient page with data:', DoctorData);
+      navigate('/DoctorPage', { state: { DoctorData } });
+      
+    } catch (error) {
+      console.error('Error during login:', error);
+      // Handle error if needed
+      alert('Invalid username or password. Please try again.');
     }
   }
 
@@ -41,10 +56,10 @@ function LoginDoctor({ handleShow, handleClose, show, callback }) {
             placeholder="UserName"
             onChange={(e) => setUsername(e.target?.value)}
           />
-          <Form.Label htmlFor="inputPassword3">Password</Form.Label>
+          <Form.Label htmlFor="inputPassword4">Password</Form.Label>
           <Form.Control
             type="password"
-            id="inputPassword3"
+            id="inputPassword4"
             aria-describedby="passwordHelpBlock"
             onChange={(e) => setPassword(e.target?.value)}
           />
@@ -53,7 +68,7 @@ function LoginDoctor({ handleShow, handleClose, show, callback }) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={async () => { await callback(await getDoctorData("https://healthcare-back.onrender.com", username, password)) }}>
+          <Button variant="primary" onClick={handleLogin}>
             Login
           </Button>
         </Modal.Footer>

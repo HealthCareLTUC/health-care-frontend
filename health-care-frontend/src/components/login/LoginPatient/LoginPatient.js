@@ -2,39 +2,48 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
-// import PatientPage from '../../PatientPage'
+import { Link, useNavigate } from 'react-router-dom';
 
-
-
-import { Route, Routes } from 'react-router';
-
-function LoginPatient({ handleShow, handleClose, show ,callback}) {
-  const savePatientData=React.createContext()
+function LoginPatient({ handleShow, handleClose, show }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [path,setPath]=useState("/")
-  async function getPatientData(url,username,password){
+  const navigate = useNavigate();
+
+  async function getPatientData(url, username, password) {
     try {
-    const response = (await fetch(`${url}/patientName/${username}`));
-    const data=await response.json()
-    if((data[0]["name"]==username)&&(data[0]["password"]==password)){
-      setPath("/patientPage")
-      window.location.href = "/patientPage";
-      console.log(`logged in successfully`);
-      return data
-    }else{
-      window.location.href = "/";
-      console.log("failed to login");
-    }} catch (error) {
-      window.location.href = "/";
-      alert("Username or password is wrong "+error)
+      const response = await fetch(`${url}/patientName/${username}`);
+      const data = await response.json();
+
+      if (data.length > 0 && data[0].patient_name == username && data[0].password == password) {
+        console.log('Logged in successfully:', data[0]);
+        return data[0];
+      } else {
+        console.log('Failed to login');
+        throw new Error('Invalid username or password');
+      }
+    } catch (error) {
+      console.error('Error fetching patient data:', error);
+      throw new Error('Failed to fetch patient data');
     }
-    
-}
+  }
+
+  async function handleLogin() {
+    try {
+      const patientData = await  getPatientData('https://healthcare-back.onrender.com',username,password);
+
+      // Handle navigation after successful login
+      console.log('Navigating to patient page with data:', patientData);
+      navigate('/patientPage', { state: { patientData } });
+      
+    } catch (error) {
+      console.error('Error during login:', error);
+      // Handle error if needed
+      alert('Invalid username or password. Please try again.');
+    }
+  }
+
   return (
     <>
-   
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Patient's Login</Modal.Title>
@@ -59,11 +68,9 @@ function LoginPatient({ handleShow, handleClose, show ,callback}) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Link to={path}>
-          <Button variant="primary" onClick={async()=>{await callback(await getPatientData("https://healthcare-back.onrender.com", username, password))}}>
+          <Button variant="primary" onClick={handleLogin}>
             Login
           </Button>
-          </Link>
         </Modal.Footer>
       </Modal>
     </>

@@ -51,7 +51,11 @@ import './Header.css';
 import NavBAr from '../NavBar/NavBar';
 
 
+
 const Header = () => {
+  
+
+  
   return (
     <header>
       <NavBAr/>
@@ -59,7 +63,7 @@ const Header = () => {
   );
 };
 
-<<<<<<< HEAD
+
 const styles = {
   header: {
     backgroundColor: '#C4DFDF',
@@ -75,7 +79,7 @@ const styles = {
     fontSize: '32px',
   },
 };
-=======
+
 export default Header
->>>>>>> main
+
 
