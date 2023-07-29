@@ -2,3 +2,35 @@
     width: 60px;
 }
 
+.Nav:hover{
+    font-size: 30px;
+
+
+}
+
+
+
+.nav-link{
+    font-size: 50px;
+}
+
+.nav-link:hover {
+    font-size: 30px
+    ;}
+
+    .nav-link {
+        font-size: 20px;
+        color: #385170;
+      }
+
+
+   
+      .nav-link:hover {
+        color: #E7EAF6;
+      }
+
+
+      custom-navbar {
+        border: 2px solid #1F43E0;
+        border-radius: 10px;
+      }

@@ -25,7 +25,7 @@ function Footer() {
           <div className="row py-4">
             <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
               <img src="img/logo.png" alt="" width="180" className="mb-3" />
-              <p className="font-italic text-muted">
+              <p className="font-italic text-muted" style={{ color: 'blue'}}  >
                 Quality treatment and compassionate care
               </p>
               {/* <div className="container pt-4"> */}

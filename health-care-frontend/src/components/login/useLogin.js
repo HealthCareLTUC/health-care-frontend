@@ -58,7 +58,7 @@ const getDoctorData=(value)=>{
             <Stack direction="horizontal" gap={2} className="col-md-5 mx-auto my-2">
                 {/* <div className='mx-2'> */}
                 
-                    <h1  style={{ fontSize: '45px'}}>Quality treatment and compassionate care </h1>
+                <h1  style={{ fontSize: '45px'  ,color:'#1f43e0'}}>Quality treatment and compassionate care </h1>
                
                {/* <Slider   className='slid'/> */}
                

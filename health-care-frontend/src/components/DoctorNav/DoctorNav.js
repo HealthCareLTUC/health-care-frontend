@@ -35,7 +35,7 @@ function DoctorNavBAr() {
 
             <Form className="d-flex">
            <Link to="/">
-            <Button  style={{backgroundColor:'#1f43e0 ',fontFamily:'Courgette, cursive',marginLeft:'1500px'}}>log out</Button>
+            <Button  style={{backgroundColor:'#1f43e0 ',fontFamily:'Courgette, cursive',marginLeft:'1000px'}}>log out</Button>
             </Link>
           </Form>
             
