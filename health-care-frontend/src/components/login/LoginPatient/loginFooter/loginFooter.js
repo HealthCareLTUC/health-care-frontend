@@ -28,7 +28,7 @@ function LoginFooter() {
               <p className="font-italic text-muted">
                 Quality treatment and compassionate care
               </p>
-              {/* <div className="container pt-4"> */}
+          
                 <section className="mb-4">
                   <a
                     className="btn btn-link btn-floating btn-lg text-dark m-1"
@@ -105,7 +105,7 @@ function LoginFooter() {
                 <div className="input-group">
                   <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1"
                     className="form-control border-0 shadow-0"
-                    //  onClick={handleInputClick}
+           
                     ref={emailInputRef}
                     value={email}
                     onChange={handleInputChange} />

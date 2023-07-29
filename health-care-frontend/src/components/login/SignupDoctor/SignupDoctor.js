@@ -97,7 +97,7 @@ function SignupDoctor({ handleShow, handleClose, show }) {
             Close
           </Button>
           {/* <Link to={"/"}> */}
-          <Button variant="primary" onClick={async() => {await postDoctorData("https://healthcare-back.onrender.com", username, password, address, specialty,phone, similar);handleClose()}}>
+          <Button variant="primary"  style={{width:'100px'}} onClick={async() => {await postDoctorData("https://healthcare-back.onrender.com", username, password, address, specialty,phone, similar);handleClose()}}>
            
            Signup
           </Button>

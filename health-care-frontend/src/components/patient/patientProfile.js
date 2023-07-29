@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Table, Button,Modal,Form } from 'react-bootstrap';
 import Header from '../Header/Header';
 import Footer from '../Footer/footer';
-// import NavBar from '../NavBar/NavBar';
 import { useLocation } from 'react-router-dom';
 import './patient.css' 
 
@@ -22,7 +21,7 @@ function PatientProfile() {
 
 console.log("from patient profile",patientData);
 console.log("from patient profile2",patientData);
-// console.log("from patient profile",patientData);
+
 
 let newapp=getdata();
 console.log("local new data",newapp);
@@ -140,7 +139,7 @@ function getdata() {
 
     <div className='profilepatient'>
       <Header/>
-      {/* <h1>Patient Profile</h1> */}
+  
       <div className="small-table-wrapper">
       <Table striped bordered hover>
         <thead>
@@ -149,7 +148,7 @@ function getdata() {
             <th>Date</th>
             <th>Time</th>
             <th>Report</th>
-            {/* <th>Action</th> */}
+          
           </tr>
         </thead>
         <tbody>

@@ -5,14 +5,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Logo from '../assests/iconDoctors.png'
 import { Image } from 'react-bootstrap';
-import Pharmacy from '../Pharmacy/Pharmacy';
 import { Link } from 'react-router-dom';
 
 import './DoctorNav.css'
 
 
 function DoctorNavBAr() {
-  // console.log('Patient Data in NavBar:', patientData);
+
 
   
   return (
@@ -21,7 +20,7 @@ function DoctorNavBAr() {
 
       <Image src={Logo} sm   className='logo' /> 
 
-        <Navbar.Brand href="/" style={{fontFamily: 'Courgette, cursive',fontSize:'30px',color:'#1f43e0'}}>HealthCare</Navbar.Brand>
+        <Navbar.Brand href="/" style={{fontFamily: 'Courgette, cursive',fontSize:'35px',color:'#1f43e0',marginButton:'20px'}}>HealthCare</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -35,13 +34,12 @@ function DoctorNavBAr() {
 
             <Form className="d-flex">
            <Link to="/">
-            <Button  style={{backgroundColor:'#1f43e0 ',fontFamily:'Courgette, cursive',marginLeft:'1000px'}}>log out</Button>
+            <Button  style={{backgroundColor:'#1f43e0 ',fontFamily:'Courgette, cursive',marginLeft:'950px',width:'100px'}}>log out</Button>
             </Link>
           </Form>
             
           </Nav>
-          {/* variant="primary"
-          */}
+         
         </Navbar.Collapse>
       </Container>
     </Navbar>

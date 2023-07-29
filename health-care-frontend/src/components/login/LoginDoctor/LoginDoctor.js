@@ -31,13 +31,13 @@ function LoginDoctor({ handleShow, handleClose, show }) {
     try {
       const DoctorData = await  getDoctorData('https://healthcare-back.onrender.com',username,password);
 
-      // Handle navigation after successful login
+    
       console.log('Navigating to patient page with data:', DoctorData);
       navigate('/DoctorPage', { state: { DoctorData } });
       
     } catch (error) {
       console.error('Error during login:', error);
-      // Handle error if needed
+  
       alert('Invalid username or password. Please try again.');
     }
   }
@@ -68,7 +68,7 @@ function LoginDoctor({ handleShow, handleClose, show }) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleLogin}>
+          <Button  style={{width:'100px'}} variant="primary" onClick={handleLogin}>
             Login
           </Button>
         </Modal.Footer>

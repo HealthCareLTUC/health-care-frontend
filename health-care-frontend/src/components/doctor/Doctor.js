@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Button } from 'react-bootstrap';
-import Header from '../Header/Header';
 import Footer from '../Footer/footer';
-// import NavBar from '../NavBar/NavBar';
 import DoctorNavBAr from '../DoctorNav/DoctorNav';
 import { useLocation } from 'react-router-dom';
 
@@ -61,7 +59,7 @@ console.log("new app for doctor",appointments);
 
 <p>{appointments.doctor_name}</p>
 
-      {/* <h1>Docctor Profile</h1> */}
+
       <div  className='small-table-wrapper'>
       <Table striped bordered hover>
         <thead>

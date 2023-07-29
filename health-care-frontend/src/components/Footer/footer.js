@@ -28,7 +28,7 @@ function Footer() {
               <p className="font-italic text-muted" style={{ color: 'blue'}}  >
                 Quality treatment and compassionate care
               </p>
-              {/* <div className="container pt-4"> */}
+              
                 <section className="mb-4">
                   <a
                     className="btn btn-link btn-floating btn-lg text-dark m-1"
@@ -76,7 +76,7 @@ function Footer() {
                     <i className="fab fa-github"></i>
                   </a>
                 </section>
-              {/* </div> */}
+        
             </div>
             <div className="col-lg-2 col-md-6 mb-4 mb-lg-0">
               <h6 className="text-uppercase font-weight-bold mb-4">health</h6>
@@ -105,7 +105,7 @@ function Footer() {
                 <div className="input-group">
                   <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1"
                     className="form-control border-0 shadow-0"
-                    //  onClick={handleInputClick}
+              
                     ref={emailInputRef}
                     value={email}
                     onChange={handleInputChange} />

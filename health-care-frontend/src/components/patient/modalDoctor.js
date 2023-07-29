@@ -35,7 +35,7 @@ function ModalDoctor({ handleShow, handleClose, show, doctor, CommentHandler, pa
 
       if (doctorResponse.ok) {
         console.log('Doctor inserted successfully');
-        // After the doctor is inserted, insert the appointment
+       
         const doctorData = await doctorResponse.json();
         console.log(doctorData.id);
         let doctorNewId=doctorData.id;
@@ -74,17 +74,7 @@ function ModalDoctor({ handleShow, handleClose, show, doctor, CommentHandler, pa
         </Modal.Header>
         <Modal.Body>{doctor.appointment}</Modal.Body>
 
-        <Form.Group
-          onSubmit={(e) => handleSubmit(e)}
-          className="mb-3"
-          controlId="exampleForm.ControlTextarea1"
-        >
-          <Form.Label>add comment</Form.Label>
-          <Form.Control as="textarea" rows={1} ref={commentInput} />
-          <Button type="submit" onClick={handleSubmit} variant="success">
-            submit
-          </Button>{' '}
-        </Form.Group>
+        
 
         <Form.Group controlId="reservationDate">
           <Form.Label>Reservation Date</Form.Label>
@@ -104,7 +94,7 @@ function ModalDoctor({ handleShow, handleClose, show, doctor, CommentHandler, pa
           />
         </Form.Group>
 
-        <p>{Comment ? Comment : 'No Comment'}</p>
+    
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
