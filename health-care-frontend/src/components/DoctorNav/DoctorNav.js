@@ -8,10 +8,10 @@ import { Image } from 'react-bootstrap';
 import Pharmacy from '../Pharmacy/Pharmacy';
 import { Link } from 'react-router-dom';
 
-import './NavBar.css'
+import './DoctorNav.css'
 
 
-function NavBAr() {
+function DoctorNavBAr() {
   // console.log('Patient Data in NavBar:', patientData);
 
   
@@ -29,9 +29,8 @@ function NavBAr() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="/patientPage" style={{fontFamily: 'Courgette, cursive',fontSize:'20px',color:'#1f43e0'}}>Home</Nav.Link>
-            <Nav.Link href="/patientprofile" style={{fontFamily: 'Courgette, cursive',fontSize:'20px',color:'#1f43e0'}}>PatientProfile</Nav.Link>
-            <Nav.Link href="/Pharmacy" style={{fontFamily: 'Courgette, cursive',fontSize:'20px',color:'#1f43e0'}}>Pharmacy</Nav.Link>
+            
+            
             
 
             <Form className="d-flex">
@@ -49,4 +48,4 @@ function NavBAr() {
   );
 }
 
-export default NavBAr;
+export default DoctorNavBAr;

@@ -51,7 +51,11 @@ import './Header.css';
 import NavBAr from '../NavBar/NavBar';
 
 
+
 const Header = () => {
+  
+
+  
   return (
     <header>
       <NavBAr/>
@@ -59,5 +63,23 @@ const Header = () => {
   );
 };
 
+
+const styles = {
+  header: {
+    backgroundColor: '#C4DFDF',
+    color: '#fff',
+    padding: '1rem',
+    textAlign: 'left',
+    display: 'flex',
+    alignItems: 'center',
+    minHeight: '50px', // Use minHeight instead of height to allow the header to grow with content
+  },
+  h1: {
+    margin: 0,
+    fontSize: '32px',
+  },
+};
+
 export default Header
+
 
