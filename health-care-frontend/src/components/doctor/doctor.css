@@ -1,16 +1,22 @@
-.tabletwo{
-    margin-top: 200px; 
-}
+
 
 .small-table-wrapper thead th{
     background-color: rgb(241, 255, 242);
+    margin-top: 100px; 
+  }
   
-    }
+  .small-table-wrapper{
+    margin-top: 40px; 
+  }
   
     .small-table-wrapper tbody td {
       background-color: #E3F4F4; 
   
   
+    }
+
+    Table{
+      margin-top: 70px; 
     }
 
 
@@ -23,9 +29,10 @@
       padding: 20px;
       border: 3px solid #2448e6;
       border-radius: 10px;
-      background-color: #c2eaec;
+    background:url(https://i.pinimg.com/564x/8b/fc/d0/8bfcd085b7a75fd29768701c8cd545d6.jpg);
+    background-size: cover;
       max-width: 300px; 
-      margin-top: 150px;
+      margin-top: 70px;
       margin-left: 490px;
       transition: transform 0.2s; 
     }
@@ -47,8 +54,10 @@
     }
 
     .doctor-card img {
-      width: 160px; 
+      width: 140px; 
       height: 100px; 
       border-radius: 50%;
-      margin-bottom: 10px;
+       margin-bottom: 10px;
+       
+       /* margin-top: 20px; */
     }

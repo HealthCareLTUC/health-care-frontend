@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 function SignupDoctor({ handleShow, handleClose, show }) {
   const [similar, setSimilar] = useState(false);
@@ -96,12 +96,12 @@ function SignupDoctor({ handleShow, handleClose, show }) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          {/* <Link to={"/"}> */}
+          <Link to={"/"}>
           <Button variant="primary"  style={{width:'100px'}} onClick={async() => {await postDoctorData("https://healthcare-back.onrender.com", username, password, address, specialty,phone, similar);handleClose()}}>
            
            Signup
           </Button>
-          {/* </Link> */}
+          </Link>
         </Modal.Footer>
       </Modal>
     </>
