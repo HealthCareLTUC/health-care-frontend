@@ -147,7 +147,8 @@ function getdata() {
             <th>Doctor</th>
             <th>Date</th>
             <th>Time</th>
-            <th>Report</th>
+            <th style={{width:'300px'}}>Notes</th>
+            <th>Action</th>
           
           </tr>
         </thead>
@@ -160,8 +161,8 @@ function getdata() {
               <td>{appointments.report}</td>
               
          
-              <Button style={{margin:'15px', width:'70px' }} variant="sucsess" onClick={() => openModal(appointments)}>Update</Button>
-              <Button variant="danger" onClick={() => handleDeleteAppointment(appointments.appointment_id)}>Delete</Button>
+            <td>  <Button style={{margin:'15px', width:'70px' }} variant="secondary" onClick={() => openModal(appointments)}>Update</Button>
+              <Button variant="danger" onClick={() => handleDeleteAppointment(appointments.appointment_id)}>Delete</Button> </td>  
             </tr>
           ))}
         </tbody>
@@ -189,7 +190,7 @@ function getdata() {
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Report:</Form.Label>
+            <Form.Label  >Notes:</Form.Label>
             <Form.Control
               as="textarea"
               rows={3}

@@ -24,6 +24,7 @@ function PatientPage(props) {
   const nameInputRef = useRef(null);
   const specialtyInputRef = useRef(null);
   const [appointments, setAppointments] = useState([]);
+
   
  
   const location = useLocation();
@@ -71,6 +72,8 @@ function PatientPage(props) {
         const response = await fetch(`https://healthcare-back.onrender.com/searchDocN?name=${name}`);
         const dataByName = await response.json();
         setSearchName(dataByName);
+
+   
       }
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -84,6 +87,8 @@ function PatientPage(props) {
         const response = await fetch(`https://healthcare-back.onrender.com/searchDoc/${specialty}`);
         const dataBySpecialty = await response.json();
         setSpecialty(dataBySpecialty);
+
+      
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -94,6 +99,9 @@ function PatientPage(props) {
   useEffect(() => {
     fetchAppointments();
   }, []);
+
+
+
 
 
   
