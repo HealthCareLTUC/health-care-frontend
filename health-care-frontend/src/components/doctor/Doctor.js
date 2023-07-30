@@ -3,8 +3,8 @@ import { Table, Button } from 'react-bootstrap';
 import Footer from '../Footer/footer';
 import DoctorNavBAr from '../DoctorNav/DoctorNav';
 import { useLocation } from 'react-router-dom';
-
-
+import imageprofile from '../assests/imageprofile.jpg'
+import './doctor.css'
 
 function Doctorprofile() {
   const [appointments, setAppointments] = useState([]);
@@ -57,7 +57,17 @@ console.log("new app for doctor",appointments);
     <div className='profilepatient'>
    <DoctorNavBAr/>
 
-<p>{appointments.doctor_name}</p>
+   <div className="doctor-card">
+        <img src={imageprofile} alt={DoctorData.doctor_name}  style={{width:'100px'}}/>
+        <h2>Name: {DoctorData.doctor_name}</h2>
+        <h2>  Specialty:{DoctorData.specialty}</h2>
+        <h2>Adress: {DoctorData.location}</h2>
+
+
+      </div>
+
+
+{/* <p>{DoctorData.doctor_name}</p> */}
 
 
       <div  className='small-table-wrapper'>
