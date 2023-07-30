@@ -5,7 +5,7 @@
 
 
 h1 {
-    margin-right: 100px;
+    margin-right: px;
     padding-top: 90px;
     font-style: oblique;
     font-weight: bolder;
@@ -20,7 +20,7 @@ h1 {
 
 
 .mx-2{
-    display: inline-flex;
+    display: inline;
     /* flex-direction: column; */
     width: 1000px;
     /* padding-right: 100px; */
@@ -73,51 +73,8 @@ h1 {
     justify-content: center;
 
   }
-  /*
-  .docLog{
-    row-gap: 200px;
-  }
-
-
-  .bot .docLog .btn-primary {
-    background-color: #007bff;
-    color: #fff;
-  }
   
 
-  .bot .docLog .btn-success {
-    background-color: #28a745;
-    color: #fff;
-  }
-  
 
-  .bot .signDoc .btn-primary {
-    background-color: #007bff;
-    color: #fff;
-  }
   
  
-  .bot .signDoc .btn-success {
-    background-color: #28a745;
-    color: #fff;
-    position: relative;
-  }
-   .bot .signDoc .btn-success .img {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-  }
-  
-
-  .bot .docLog,
-  .bot .signDoc {
-    display: flex;
-    gap: 100px;
-  }
-
-  .DL{
-
-    width: 100px;
-  }
-   */

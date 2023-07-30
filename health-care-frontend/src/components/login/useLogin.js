@@ -60,7 +60,7 @@ const getDoctorData=(value)=>{
                 
                 <h1  style={{ fontSize: '45px'  ,color:'#1f43e0'}}>Quality treatment and compassionate care </h1>
                
-               {/* <Slider   className='slid'/> */}
+             
                
             </Stack >
 
