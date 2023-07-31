@@ -91,11 +91,11 @@ function SignupPatient({ handleShow, handleClose, show }) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          {/* <Link to="/patientPage"> */}
-          <Button variant="primary" style={{width:'100px'}} onClick={async () => await postPatientData("https://healthcare-back.onrender.com", username, password, history, age, similar)}>
+          <Link to={"/"}>
+          <Button variant="primary" style={{width:'100px'}} onClick={async () => {await postPatientData("https://healthcare-back.onrender.com", username, password, history, age, similar);handleClose()}}>
             Signup
           </Button>
-          {/* </Link> */}
+          </Link>
         </Modal.Footer> 
       </Modal>
     </>
